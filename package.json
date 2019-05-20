@@ -7,7 +7,7 @@
   "homepage": ".",
   "scripts": {
     "start": "node scripts/start.js",
-    "build:web": "node scripts/build.js",
+    "build:web": "yarn clear && node scripts/build.js",
     "test": "node scripts/test.js",
     "clear": "rimraf ./build && rimraf ./builds",
     "build:electron": "electron-packager ./ --out=./builds",
