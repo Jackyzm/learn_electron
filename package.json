@@ -1,18 +1,18 @@
 {
   "name": "learn_electron",
   "productName": "learn_electron",
-  "version": "0.1.0",
-  "private": true,
-  "main": "main.js",
-  "homepage": ".",
+  "version": "1.0.0",
+  "main": "./main.js",
+  "author": "jackyzm",
   "scripts": {
     "start": "node scripts/start.js",
-    "build:web": "node scripts/build.js",
+    "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "clear": "rimraf ./build && rimraf ./builds",
-    "build:electron": "electron-packager ./ --out=./builds",
-    "electron-start": "cross-env NODE_ENV=development electron .",
-    "electron-build": "yarn build:electron"
+    "build:mac": "electron-builder --mac",
+    "build:win": "electron-builder --win --x64",
+    "build:win32": "electron-builder --win --x32",
+    "electron-start": "electron ."
   },
   "devDependencies": {
     "@babel/core": "7.4.3",
@@ -29,8 +29,8 @@
     "css-loader": "2.1.1",
     "dotenv": "6.2.0",
     "dotenv-expand": "4.2.0",
-    "electron": "^5.0.0",
-    "electron-packager": "^13.1.1",
+    "electron": "^5.0.6",
+    "electron-builder": "^21.0.15",
     "eslint": "^5.16.0",
     "eslint-config-react-app": "^4.0.0",
     "eslint-loader": "2.1.2",
