@@ -1,5 +1,5 @@
 // 引入 electron 并创建一个 Browserwindow
-const {app, BrowserWindow} = require('electron');
+const { app, BrowserWindow } = require('electron');
 const path = require('path');
 const url = require('url');
 
@@ -20,21 +20,19 @@ function createWindow() {
   */
 
   // 加载应用----适用于 react 项目
-
-  // if (process.env.NODE_ENV === 'development') {
-  //   mainWindow.loadURL('http://localhost:3000/');
-  // } else {
-  mainWindow.loadURL(
-    url.format({
-      pathname: path.join(__dirname, './index.html'),
-      protocol: 'file:',
-      slashes: true
-    })
-  );
-  // }
-
-  // 打开开发者工具，默认不打开
-  // mainWindow.webContents.openDevTools()
+  if (process.env.NODE_ENV === 'development') {
+    mainWindow.loadURL('http://localhost:3000/');
+    // 打开开发者工具，默认不打开
+    mainWindow.webContents.openDevTools()
+  } else {
+    mainWindow.loadURL(
+        url.format({
+            pathname: path.join(__dirname, './build/index.html'),
+            protocol: 'file:',
+            slashes: true
+        })
+    );
+  }
 
   // 关闭window时触发下列事件.
   mainWindow.on('closed', function() {

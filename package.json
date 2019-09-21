@@ -6,30 +6,29 @@
   "author": "jackyzm",
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
+    "build": "yarn clear && node scripts/build.js",
     "test": "node scripts/test.js",
-    "clear": "rimraf ./build && rimraf ./builds",
-    "build:mac": "electron-builder --mac",
-    "build:win": "electron-builder --win --x64",
-    "build:win32": "electron-builder --win --x32",
-    "electron-start": "electron ."
+    "clear": "rimraf ./build && rimraf ./dist",
+    "build:mac": "cross-env NODE_ENV=production electron-builder --mac",
+    "build:win": "cross-env NODE_ENV=production electron-builder --win --x64",
+    "build:win32": "cross-env NODE_ENV=production electron-builder --win --x32",
+    "electron-start": "cross-env NODE_ENV=development electron ./"
   },
   "devDependencies": {
     "@babel/core": "7.4.3",
     "@svgr/webpack": "4.1.0",
-    "@typescript-eslint/eslint-plugin": "1.6.0",
-    "@typescript-eslint/parser": "1.6.0",
     "babel-eslint": "10.0.1",
     "babel-jest": "24.7.1",
     "babel-loader": "8.0.5",
     "babel-plugin-named-asset-import": "^0.3.2",
     "babel-preset-react-app": "^8.0.0",
     "case-sensitive-paths-webpack-plugin": "2.2.0",
+    "copy-webpack-plugin": "^5.0.4",
     "cross-env": "^5.2.0",
     "css-loader": "2.1.1",
     "dotenv": "6.2.0",
     "dotenv-expand": "4.2.0",
-    "electron": "^5.0.6",
+    "electron": "^6.0.10",
     "electron-builder": "^21.0.15",
     "eslint": "^5.16.0",
     "eslint-config-react-app": "^4.0.0",
@@ -71,9 +70,6 @@
     "webpack-dev-server": "3.2.1",
     "webpack-manifest-plugin": "2.0.4",
     "workbox-webpack-plugin": "4.2.0"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "browserslist": {
     "production": [
@@ -130,11 +126,6 @@
     "watchPlugins": [
       "jest-watch-typeahead/filename",
       "jest-watch-typeahead/testname"
-    ]
-  },
-  "babel": {
-    "presets": [
-      "react-app"
     ]
   }
 }
