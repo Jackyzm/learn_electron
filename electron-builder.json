@@ -1,52 +1,52 @@
 {
-  "productName": "测试ELectron打包",
-  "appId": "Personal.DesktopApp.Startkit.1.0.0",
-  "copyright": "Copyright © 2018 ${author}",
-  "directories": {
-    "output": "dist"
-  },
-  "asar": true,
-  "artifactName": "${productName}-${version}.${ext}",
-  "compression": "maximum",
-  "files": {
-    "from": "./build"
-  },
-  "dmg": {
-    "contents": [
-      {
-        "x": 410,
-        "y": 150,
-        "type": "link",
-        "path": "/Applications"
-      },
-      {
-        "x": 130,
-        "y": 150,
-        "type": "file"
-      }
-    ]
-  },
-  "mac": {
-    "icon": "build/icons/icon.icns"
-  },
-  "win": {
-    "icon": "build/icons/icon.ico",
-    "target": "nsis",
-    "legalTrademarks": "Eyas Personal"
-  },
-  "nsis": {
-    "allowToChangeInstallationDirectory": true,
-    "oneClick": false,
-    "menuCategory": true,
-    "allowElevation": false
-  },
-  // "publish": [
-  //   {
-  //     "provider": "generic", // 服务器提供商 也可以是GitHub等等
-  //     "url": "http://xxxxx/" // 服务器地址
-  //   }
-  // ],
-  "linux": {
-    "icon": "build/icons"
-  }
+    "productName": "测试ELectron打包",
+    "appId": "Personal.DesktopApp.Startkit.1.0.0",
+    "copyright": "Copyright © 2018 ${author}",
+    "directories": {
+        "output": "dist"
+    },
+    "asar": true,
+    "artifactName": "${productName}-${version}.${ext}",
+    "compression": "maximum",
+    "files": {
+        "from": "./build"
+    },
+    "dmg": {
+        "contents": [
+            {
+                "x": 410,
+                "y": 150,
+                "type": "link",
+                "path": "/Applications"
+            },
+            {
+                "x": 130,
+                "y": 150,
+                "type": "file"
+            }
+        ]
+    },
+    "mac": {
+        "icon": "build/icons/icon.icns"
+    },
+    "win": {
+        "icon": "build/icons/icon.ico",
+        "target": "nsis",
+        "legalTrademarks": "Eyas Personal"
+    },
+    "nsis": {
+        "allowToChangeInstallationDirectory": true,
+        "oneClick": false,
+        "menuCategory": true,
+        "allowElevation": false
+    },
+    // "publish": [
+    //   {
+    //     "provider": "generic", // 服务器提供商 也可以是GitHub等等
+    //     "url": "http://xxxxx/" // 服务器地址
+    //   }
+    // ],
+    "linux": {
+        "icon": "build/icons"
+    }
 }
